@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <!-- Linking Jquery -->
+  <script
+    src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"
+  ></script>
+  <!-- Linking Bootstrap CSS for styling -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Linking custom CSS file for additional styling -->
+  <link rel="stylesheet" href="css/crypto.css" />
+  <link rel="stylesheet" href="css/coinsApi.css" />
+  <!-- Linking JavaScript -->
+  <script defer src="js/coinsApi.js"></script>
+  <body>
+    <!-- Parallax container for video and content overlay -->
+    <div class="parallax">
+      <div class="marquee">
+        <span
+          ><p>
+            <!-- List of cryptocurrencies -->
+            Bitcoin (BTC) | Ethereum (ETH) | Binance Coin (BNB) | Cardano (ADA)
+            | XRP (XRP) | Solana (SOL) | Polkadot (DOT) | Dogecoin (DOGE) |
+            Chainlink (LINK) | Uniswap (UNI) | Litecoin (LTC) | Bitcoin Cash
+            (BCH) | Stellar (XLM) | Polygon (MATIC) | Wrapped Bitcoin (WBTC) |
+            Aave (AAVE) | Cosmos (ATOM) | Algorand (ALGO) | Monero (XMR) |
+            Ethereum Classic (ETC) | EOS (EOS) | VeChain (VET) | Kusama (KSM) |
+            Maker (MKR) | Crypto.com Coin (CRO) | Tezos (XTZ) | PancakeSwap
+            (CAKE) | Avalanche (AVAX) | Axie Infinity (AXS) | The Graph (GRT) |
+            yearn.finance (YFI) | Decentraland (MANA) | SushiSwap (SUSHI) |
+            Zilliqa (ZIL) | Basic Attention Token (BAT) | Fantom (FTM) |
+            THORChain (RUNE) | IOTA (MIOTA) | Compound (COMP) | Synthetix (SNX)
+            | Ren (REN) | 0x (ZRX) | Revain (REV) | Ocean Protocol (OCEAN) |
+            Bancor (BNT) | Loopring (LRC) | Kyber Network (KNC) | Balancer (BAL)
+            | Curve DAO Token (CRV) | UMA (UMA)
+          </p></span
+        >
+      </div>
+      <!-- Company name and tagline -->
+      <h1 id="compName">BitFlow</h1>
+      <h2 id="compName">
+        Ride <br />
+        the<br />
+        wave <br />
+        of the <br />
+        future.
+      </h2>
+      <!-- Learn more button with an onclick event to open a new page -->
+      <h3 class="learn-more" onclick="openNewPage()">Learn More</h3>
+    </div>
+
+    <div class="arrow">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- The Down Content Is Here -->
+    <div class="downContent">
+      <!-- search bar -->
+      <div class="input-group">
+        <input type="text" class="form-control search" placeholder="Search" />
+        <div class="input-group-append">
+          <button
+            class="btn btn-primary"
+            id="searchBar"
+            onclick="filterCoins()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      <!-- nav bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" id="home" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="aboutNav" href="#">About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="live" href="#">Live Reports</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="coins">
+        <div id="container"></div>
+        <br />
+        <br />
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-dialog-centered modal-lg"
+            role="document"
+          >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                  <b>Please remove one coin</b>
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div
+                class="modal-body"
+                id="selectedCoins"
+                style="max-height: 400px; overflow-y: auto"
+              ></div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="infoData">
+      <div class="info">
+        <div class="meCard">
+          <div class="photo-container">
+            <div class="photo">
+              <img src="/media/deborah.jpg" height="50px" alt="Photo" />
+            </div>
+            <h1 id="Bname">Deborah Ester Egged</h1>
+          </div>
+          <br />
+          <p>
+            I am creative, hardworking, and solution-oriented. Excellent at self-learning,
+            loves challenges, and is skilled in working independently or as part of a team.
+            I execute tasks professionally and love learning new technologies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

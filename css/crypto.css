@@ -1,0 +1,263 @@
+/*  this is the CSS design of  the General website */
+body,
+html {
+  height: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.parallax {
+  /* The image used */
+  /* Set a specific height */
+background-image: url(..//media/pexels-irina-iriser-1366957.jpg);
+  min-height: 1030px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Body background color */
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+/* Upper content styles */
+.upperContent {
+  color: aliceblue;
+}
+
+/* Company name and tagline styles  */
+ h1 {
+padding-top: 17PX;
+  font-size: 90px;
+  font-weight: bold;
+  color: #ff0145;
+  margin-left: 50px;
+  opacity: 80%;
+}
+h2 {
+  font-size: 70px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-left: 50px;
+  opacity: 37%;
+  position: absolute;
+  top: 190px;
+}
+
+ /* "Learn more" button styles  */
+ h3 {
+  font-size: 20px;
+  color: rgb(55, 162, 234);
+  margin-bottom: 310px;
+  margin-left: 70px;
+} 
+#logo {
+  position: absolute;
+  top: 90px;
+  right: 20px;
+}
+
+/* "Learn more" button hover effect styles */
+.parallax .learn-more {
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  color: white;
+  background-color: #1b3d5894;
+  padding: 9px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.parallax .learn-more:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+}
+
+.parallax .learn-more:hover {
+  background-color: #00000094;
+}
+
+.parallax .learn-more:hover:after {
+  width: 100%;
+}
+
+
+.downContent {
+  color: aliceblue;
+  background-color: rgb(0, 0, 0);
+}
+#photo {
+  position: absolute;
+  right: 40px;
+  top: 70px;
+}
+
+/* Navbar styles */
+/* Navbar styles */
+.navbar {
+  background-color: rgb(0, 0, 0);
+}
+
+#navbarNav {
+  font-size: x-large;
+  margin-left: 70px;
+}
+
+/* search bar */
+.input-group {
+  width: 300px;
+  position: absolute;
+  margin-top: 35px;
+  margin-left: 1330px;
+  z-index: 1000;
+}
+
+
+
+.nav-item, .nav-link {
+  background-color: transparent;
+}
+
+/* downd part of the page Div */
+.dPart {
+  color: aliceblue;
+}
+
+
+.coinsLists{
+  height: 1000px;
+  width: 1700px;
+margin-left: 40px;
+  background-color: rgb(0, 0, 0) ;
+
+}
+/*  crad of about me */
+.info{
+  height: 300px;
+  color: aliceblue;
+justify-content: center;
+}
+
+/* Marquee ticker styles */
+.marquee {
+  font-size: 21px;
+  color: aliceblue;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 30%;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 90s linear infinite;
+  margin-top: 10px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* Arrow */
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: rotate(1deg);
+  cursor: pointer;
+}
+
+.arrow span {
+  display: flex;
+  margin-top: 10px;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+  transform: rotate(45deg);
+  animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
+/* profile */
+.photo-container {
+  display: flex;
+  align-items: center;
+}
+
+.photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ddd;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-top: 17px;
+}
+
+.photo img {
+  width: 120%;
+  height: auto;
+}
+
+#Bname {
+  font-size: 44px;
+  margin-left: 30px;
+  padding: 0;
+  color: aliceblue;
+}
+
+.meCard {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: aliceblue;
+}
+
+.infoData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #10303e;
+  width: 500px;
+  height: 270px;
+  border-radius: 20px;
+margin-left: 590px;
+}
